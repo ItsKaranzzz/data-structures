@@ -78,4 +78,27 @@ public class MyLinkedList {
         } else
             throw new Exception("removal from Empty list");
     }
+
+    public int removeFirst() throws Exception {
+        int removedItem;
+        if (!isListEmpty()) {
+            if (head.next == null) {
+                removedItem = head.data;
+                head = null;
+                return removedItem;
+            } else {
+                removedItem = head.data;
+                head = head.next;
+                return removedItem;
+            }
+        } else
+            throw new Exception("removal from Empty List");
+    }
+
+    public int getFirst() throws Exception {
+        if (!isListEmpty()) {
+            return head.data;
+        } else
+            throw new Exception("removal from Empty List");
+    }
 }
