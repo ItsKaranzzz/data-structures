@@ -2,11 +2,11 @@ package node;
 
 public class Node {
 
-    int data;
-    Node next;
+    public int data;
+    public Node next;
 
-    Node(int data, Node next) {
+    public Node(int data) {
         this.data = data;
-        this.next = next;
+        this.next = null;
     }
 }
