@@ -31,7 +31,7 @@ public class MyLinkedList {
         }
     }
 
-    public void removeData(int data) {
+    public void removeData(int data) throws Exception {
         Node temp = head;
         if (head.data == data) {
             head = null;
@@ -41,8 +41,41 @@ public class MyLinkedList {
                 temp = temp.next;
             }
             temp.next = temp.next.next;
-        }
+        } else
+            throw new Exception("removal from Empty list");
     }
 
+    public void removeLastElement() throws Exception {
+        Node temp = head;
 
+        if (!isListEmpty()) {
+            if (head.next == null) {
+                head = null;
+            } else {
+                while (temp.next.next != null) {
+                    temp = temp.next;
+                }
+                temp.next = null;
+            }
+        } else
+            throw new Exception("removal from Empty list");
+    }
+
+    public int getLastElement() throws Exception {
+        Node temp = head;
+
+        if (!isListEmpty()) {
+            if (head.next == null) {
+                int headData = head.data;
+                head = null;
+                return headData;
+            } else {
+                while (temp.next.next != null) {
+                    temp = temp.next;
+                }
+                return temp.next.data;
+            }
+        } else
+            throw new Exception("removal from Empty list");
+    }
 }
