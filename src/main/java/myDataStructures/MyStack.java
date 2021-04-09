@@ -2,12 +2,12 @@ package myDataStructures;
 
 import node.Node;
 
-public class MyStack {
+public class MyStack<S> {
 
-    MyLinkedList list = new MyLinkedList();
+    MyLinkedList<S> list = new MyLinkedList<>();
     Node top;
 
-    public void pushToStack(int data) {
+    public void pushToStack(S data) {
         list.addElement(data);
     }
 
@@ -22,7 +22,7 @@ public class MyStack {
         return list.isListEmpty();
     }
 
-    public int peek() throws Exception {
+    public S peek() throws Exception {
         if (!isStackEmpty())
             return list.getLastElement();
         else

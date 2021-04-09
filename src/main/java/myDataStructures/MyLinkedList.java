@@ -2,20 +2,20 @@ package myDataStructures;
 
 import node.Node;
 
-public class MyLinkedList {
+public class MyLinkedList<L> {
 
-    Node head;
+    Node<L> head;
 
     public boolean isListEmpty() {
         return head == null;
     }
 
-    public void addElement(int data) {
-        Node nodeToAdd = new Node(data);
+    public void addElement(L data) {
+        Node<L> nodeToAdd = new Node<>(data);
         if (isListEmpty())
             head = nodeToAdd;
         else {
-            Node temp = head;
+            Node<L> temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
@@ -24,29 +24,30 @@ public class MyLinkedList {
     }
 
     public void printListElements() {
-        Node temp = head;
+        Node<L> temp = head;
         while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
     }
 
-    public void removeData(int data) throws Exception {
-        Node temp = head;
-        if (head.data == data) {
-            head = null;
-        }
+    public void removeData(L data) throws Exception {
+        Node<L> temp = head;
         if (!isListEmpty()) {
-            while (temp.next.data != data) {
-                temp = temp.next;
+            if (head.data == data) {
+                head = null;
+            } else {
+                while (temp.next.data != data) {
+                    temp = temp.next;
+                }
+                temp.next = temp.next.next;
             }
-            temp.next = temp.next.next;
         } else
             throw new Exception("removal from Empty list");
     }
 
     public void removeLastElement() throws Exception {
-        Node temp = head;
+        Node<L> temp = head;
 
         if (!isListEmpty()) {
             if (head.next == null) {
@@ -61,33 +62,33 @@ public class MyLinkedList {
             throw new Exception("removal from Empty list");
     }
 
-    public int getLastElement() throws Exception {
-        Node temp = head;
+    public L getLastElement() throws Exception {
+        Node<L> temp = head;
 
         if (!isListEmpty()) {
             if (head.next == null) {
-                int headData = head.data;
+                L headData = (L) head.data;
                 head = null;
                 return headData;
             } else {
                 while (temp.next.next != null) {
                     temp = temp.next;
                 }
-                return temp.next.data;
+                return (L) temp.next.data;
             }
         } else
             throw new Exception("removal from Empty list");
     }
 
-    public int removeFirst() throws Exception {
-        int removedItem;
+    public L removeFirst() throws Exception {
+        L removedItem;
         if (!isListEmpty()) {
             if (head.next == null) {
-                removedItem = head.data;
+                removedItem = (L) head.data;
                 head = null;
                 return removedItem;
             } else {
-                removedItem = head.data;
+                removedItem = (L) head.data;
                 head = head.next;
                 return removedItem;
             }
@@ -95,9 +96,9 @@ public class MyLinkedList {
             throw new Exception("removal from Empty List");
     }
 
-    public int getFirst() throws Exception {
+    public L getFirst() throws Exception {
         if (!isListEmpty()) {
-            return head.data;
+            return (L) head.data;
         } else
             throw new Exception("removal from Empty List");
     }

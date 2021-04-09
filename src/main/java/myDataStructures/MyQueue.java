@@ -1,18 +1,18 @@
 package myDataStructures;
 
-public class MyQueue {
+public class MyQueue<Q> {
 
-    MyLinkedList list = new MyLinkedList();
+    MyLinkedList<Q> list = new MyLinkedList<>();
 
-    public void enqueue(int data) {
+    public void enqueue(Q data) {
         list.addElement(data);
     }
 
-    public int dequeue() throws Exception {
+    public Q dequeue() throws Exception {
         return list.removeFirst();
     }
 
-    public int getElement() throws Exception {
+    public Q getElement() throws Exception {
         return list.getFirst();
     }
 }

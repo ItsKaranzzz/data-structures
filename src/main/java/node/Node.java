@@ -1,11 +1,11 @@
 package node;
 
-public class Node {
+public class Node<E> {
 
-    public int data;
-    public Node next;
+    public E data;
+    public Node<E> next;
 
-    public Node(int data) {
+    public Node(E data) {
         this.data = data;
         this.next = null;
     }

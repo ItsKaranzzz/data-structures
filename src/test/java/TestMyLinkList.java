@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class TestMyLinkList {
 
-    MyLinkedList myLinkedList = new MyLinkedList();
+    MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 
     @Test
     public void testListAdd() {

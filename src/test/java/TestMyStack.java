@@ -4,23 +4,23 @@ import org.junit.Test;
 
 public class TestMyStack {
 
-    MyStack myStack = new MyStack();
+    MyStack<String> myStack = new MyStack<>();
 
     @Test
     public void testPushToStack() throws Exception {
-        myStack.pushToStack(11);
-        myStack.pushToStack(12);
-        myStack.pushToStack(1);
-        Assert.assertEquals(1, myStack.peek());
+        myStack.pushToStack("Raj");
+        myStack.pushToStack("Veronica");
+        myStack.pushToStack("Nancy");
+        Assert.assertEquals("Nancy", myStack.peek());
     }
 
     @Test
     public void testPopFromStack() throws Exception {
-        myStack.pushToStack(11);
-        myStack.pushToStack(12);
-        myStack.pushToStack(1);
+        myStack.pushToStack("Raj");
+        myStack.pushToStack("Veronica");
+        myStack.pushToStack("Nancy");
         myStack.popFromStack();
-        Assert.assertEquals(12, myStack.peek());
+        Assert.assertEquals("Veronica", myStack.peek());
     }
 
 }
