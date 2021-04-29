@@ -1,4 +1,5 @@
 import myDataStructures.MyLinkedList;
+import node.Node;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -39,4 +40,25 @@ public class TestMyLinkList {
         Assert.assertTrue(myLinkedList.isListEmpty());
     }
 
+    @Test
+    public void reverseTest() throws Exception {
+        myLinkedList.addElement(2);
+        myLinkedList.addElement(5);
+        myLinkedList.addElement(7);
+        myLinkedList.addElement(8);
+        myLinkedList.printListElements();
+        Node<Integer> reverseList = myLinkedList.reverse(myLinkedList.head);
+        System.out.println("\n");
+        myLinkedList.printListElements(reverseList);
+    }
+
+    @Test
+    public void testMiddleNode() {
+        myLinkedList.addElement(2);
+        myLinkedList.addElement(5);
+        myLinkedList.addElement(7);
+        myLinkedList.addElement(8);
+        Node<Integer> getMiddle = myLinkedList.getMiddleElement(myLinkedList.head);
+        myLinkedList.printListElements(getMiddle);
+    }
 }

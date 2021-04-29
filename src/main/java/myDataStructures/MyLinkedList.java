@@ -4,7 +4,7 @@ import node.Node;
 
 public class MyLinkedList<L> {
 
-    Node<L> head;
+    public Node<L> head;
 
     public boolean isListEmpty() {
         return head == null;
@@ -24,6 +24,14 @@ public class MyLinkedList<L> {
     }
 
     public void printListElements() {
+        Node<L> temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
+
+    public void printListElements(Node<L> head) {
         Node<L> temp = head;
         while (temp != null) {
             System.out.println(temp.data);
@@ -101,5 +109,32 @@ public class MyLinkedList<L> {
             return (L) head.data;
         } else
             throw new Exception("removal from Empty List");
+    }
+
+    public Node<L> reverse(Node<L> head) {
+
+        Node<L> prev = null;
+        Node<L> next = null;
+        Node<L> current = head;
+
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        return prev;
+    }
+
+    public Node<L> getMiddleElement(Node<L> head) {
+        Node<L> first = head;
+        Node<L> second = head;
+
+        while ((second != null) && (second.next != null)) {
+            first = first.next;
+            second = second.next.next;
+        }
+        return first;
     }
 }
