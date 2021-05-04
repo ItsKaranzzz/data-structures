@@ -61,4 +61,14 @@ public class TestMyLinkList {
         Node<Integer> getMiddle = myLinkedList.getMiddleElement(myLinkedList.head);
         myLinkedList.printListElements(getMiddle);
     }
+
+    @Test
+    public void testPalindromeList() {
+        myLinkedList.addElement(1);
+        myLinkedList.addElement(2);
+        myLinkedList.addElement(2);
+        myLinkedList.addElement(2);
+        myLinkedList.printListElements();
+        System.out.println(myLinkedList.isPalindromeList(myLinkedList.head));
+    }
 }

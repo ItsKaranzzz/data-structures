@@ -2,6 +2,8 @@ package myDataStructures;
 
 import node.Node;
 
+import java.util.Stack;
+
 public class MyLinkedList<L> {
 
     public Node<L> head;
@@ -136,5 +138,24 @@ public class MyLinkedList<L> {
             second = second.next.next;
         }
         return first;
+    }
+
+    public boolean isPalindromeList(Node<L> head) {
+
+        Stack<L> stack = new Stack<>();
+
+        Node<L> temp = head;
+        while (temp != null) {
+            stack.push(temp.data);
+            temp = temp.next;
+        }
+        Node<L> temp2 = head;
+        while (temp2 != null) {
+            L lastListElement = stack.pop();
+            if (lastListElement != temp2.data)
+                return false;
+            temp2 = temp2.next;
+        }
+        return true;
     }
 }
