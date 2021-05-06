@@ -32,7 +32,7 @@ public class QuickSort {
     }
 
     int getFirstSortedElement(int[] arr, int l, int r) {
-        int pivot = arr[(l + r) / 2];
+        int pivot = arr[l];
         int m = l;
         int n = r;
 
