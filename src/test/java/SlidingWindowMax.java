@@ -7,13 +7,12 @@ public class SlidingWindowMax {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        int[] input = {1,2,1,4,5,2,3,6};
+        int[] input = {1, 2, 1, 4, 5, 2, 3, 6};
         System.out.println(Arrays.toString(solution.getMaxOfSlidingWindow(input, 5)));
+        System.out.println(solution.getMax(solution.getMaxOfSlidingWindow(input, 3)));
     }
 
     static class Solution {
-
-        Deque<Integer> deque = new LinkedList<>();
 
         int[] getMaxOfSlidingWindow(int[] arr, int k) {
             int l = arr.length;
@@ -38,6 +37,11 @@ public class SlidingWindowMax {
                     out[m++] = arr[deque.peekFirst()];
             }
             return out;
+        }
+
+        int getMax(int[] arr) {
+            Arrays.sort(arr);
+            return arr[arr.length - 1];
         }
     }
 }
