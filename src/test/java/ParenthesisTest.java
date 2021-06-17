@@ -15,10 +15,12 @@ public class ParenthesisTest {
 
     boolean isBalancedParenthesis(String s) {
 
-        Map<Character, Character> braces = new HashMap<>();
-        braces.put('}', '{');
-        braces.put(']', '[');
-        braces.put(')', '(');
+        Map<Character, Character> braces = new HashMap<Character, Character>()
+            {{
+                put('}', '{');
+                put(']', '[');
+                put(')', '(');
+            }};
         Stack<Character> stack = new Stack<>();
 
         for (char each : s.toCharArray()) {

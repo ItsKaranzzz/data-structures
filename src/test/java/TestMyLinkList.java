@@ -71,4 +71,14 @@ public class TestMyLinkList {
         myLinkedList.printListElements();
         System.out.println(myLinkedList.isPalindromeList(myLinkedList.head));
     }
+
+    @Test
+    public void testOddEvenList() {
+        myLinkedList.addElement(10);
+        myLinkedList.addElement(20);
+        myLinkedList.addElement(30);
+        myLinkedList.addElement(40);
+        myLinkedList.arrangeOddEvenElementsInList(myLinkedList.head);
+        myLinkedList.printListElements();
+    }
 }

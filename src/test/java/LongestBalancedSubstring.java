@@ -19,7 +19,7 @@ public class LongestBalancedSubstring {
         int count = 0, leftIndex = 0, rightIndex = 0, maxLen = 0;
 
         char[] charArray = s.toCharArray();
-        for (int i = 0, charArrayLength = charArray.length; i < charArrayLength; i++) {
+        for (int i = 0; i<charArray.length; i++) {
             int each = Integer.parseInt(String.valueOf(charArray[i]));
             count += (each == 1) ? 1 : -1;
             if (map.containsKey(count)) {

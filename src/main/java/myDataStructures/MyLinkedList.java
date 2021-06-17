@@ -158,4 +158,23 @@ public class MyLinkedList<L> {
         }
         return true;
     }
+
+    public Node<L> arrangeOddEvenElementsInList(Node<L> head) {
+        if (head == null)
+            return null;
+
+        Node<L> odd = head;
+        Node<L> even = head.next;
+        Node<L> evenFirst = even;
+
+        while (even != null && even.next != null) {
+            odd.next = even.next;
+            odd = odd.next;
+            even.next = odd.next;
+            even = even.next;
+        }
+        odd.next = evenFirst;
+
+        return head;
+    }
 }
