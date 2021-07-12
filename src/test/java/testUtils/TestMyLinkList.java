@@ -1,3 +1,5 @@
+package testUtils;
+
 import myDataStructures.MyLinkedList;
 import node.Node;
 import org.junit.Assert;

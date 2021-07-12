@@ -1,3 +1,5 @@
+package testUtils;
+
 import inputReader.CustomReader;
 
 import java.util.ArrayList;

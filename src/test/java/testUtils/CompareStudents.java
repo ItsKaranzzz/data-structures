@@ -1,3 +1,5 @@
+package testUtils;
+
 import students.Student;
 
 import java.util.Collections;
@@ -42,7 +44,7 @@ public class CompareStudents {
 
        // 3.  Collections.sort(students, Comparator.comparing(Student::getName).thenComparing(Student::getMarks).reversed());
 
-       //4.  Collections.sort(students, new CompareStudent());
+       //4.  Collections.sort(students, new testUtils.CompareStudent());
 
         Collections.sort(students);
         students.forEach(System.out::println); //Overridden 'toString()' method is required for this

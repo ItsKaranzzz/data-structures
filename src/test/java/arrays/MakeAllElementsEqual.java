@@ -1,3 +1,5 @@
+package arrays;
+
 import org.junit.Test;
 
 public class MakeAllElementsEqual {

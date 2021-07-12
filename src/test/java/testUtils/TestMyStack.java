@@ -1,3 +1,5 @@
+package testUtils;
+
 import myDataStructures.MyStack;
 import org.junit.Assert;
 import org.junit.Test;

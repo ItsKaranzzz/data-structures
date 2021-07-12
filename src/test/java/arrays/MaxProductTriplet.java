@@ -1,7 +1,7 @@
-import org.junit.Assert;
+package arrays;
+
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MaxProductTriplet {

@@ -14,6 +14,7 @@ public class MergeSort {
         System.out.println(Arrays.toString(arr));
     }
 
+    //best & avg: O[nLog2n]
     private void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int middle = (left + right) / 2;
